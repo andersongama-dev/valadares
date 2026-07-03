@@ -1,54 +1,76 @@
 import Image from "next/image";
+import { AetherHero } from "@/components/ui/aether-hero";
 
 export default function Home() {
   return (
     <div>
-      <header className="fixed top-8 left-1/2 -translate-x-1/2 w-full max-w-7xl flex justify-between items-center bg-white px-8 py-4 rounded-2xl">
+      <header
+        className="
+          fixed top-8 left-1/2 -translate-x-1/2
+          w-full max-w-7xl
+          flex justify-between items-center
+          px-8 py-4
+          rounded-2xl
+          z-[999999999999999]
+          bg-gradient-to-b from-white/30 to-white/10
+          backdrop-blur-2xl
+          border border-white/30
+          shadow-2xl shadow-black/10
+          "
+      >
         <div className="flex gap-4">
-          {/* <Image alt="Logo valadares" src={""} width={32} height={32}></Image> */}
-          <p className="text-xl font-medium text-blue-800">Valadares</p>
+          {/* <Image alt="Logo valadares" src={""} width={32} height={32} /> */}
+          <p className="text-xl font-medium text-white">Valadares</p>
         </div>
 
         <nav>
-          <ul className="flex gap-6">
+          <ul className="flex gap-6 text-white">
             <li>
-              <a href="#hero">Início</a>
+              <a href="#hero" className="hover:text-blue-300 transition-colors">
+                Início
+              </a>
             </li>
             <li>
-              <a href="">Soluções</a>
+              <a href="" className="hover:text-blue-300 transition-colors">
+                Soluções
+              </a>
             </li>
             <li>
-              <a href="">Metodologia</a>
+              <a href="" className="hover:text-blue-300 transition-colors">
+                Metodologia
+              </a>
             </li>
             <li>
-              <a href="">Resultados</a>
+              <a href="" className="hover:text-blue-300 transition-colors">
+                Resultados
+              </a>
             </li>
             <li>
-              <a href="">Contato</a>
+              <a href="" className="hover:text-blue-300 transition-colors">
+                Contato
+              </a>
             </li>
           </ul>
         </nav>
 
-        <button className="bg-blue-800 px-4 py-3 text-base rounded-xl text-white font-medium cursor-pointer">
+        <button className="bg-white px-4 py-3 text-base rounded-xl text-blue-800 font-medium cursor-pointer hover:bg-blue-800 hover:text-white transition-colors">
           Solicitar Auditoria
         </button>
       </header>
 
-      <section id="hero">
-        <div>
-          <p>Estratégia para operações de marketplace</p>
-          <h1>Faturamento é ego. Lucro é realidade</h1>
-          <p>
-            Escalar uma operação vai muito além de vender mais, A Valadares
+      <section id="#hero">
+        <AetherHero
+          title="Faturamento é ego. Lucro é realidade"
+          subtitle="Escalar uma operação vai muito além de vender mais, A Valadares
             Assessoria transforma dados em decisões estratégicas para aumnetar a
-            eficiência, preservar margem e construir operações sustentáveis
-          </p>
-
-          <article>
-            <button>Solicitar Auditoria Estratégica</button>
-            <button>Ver Metodologia</button>
-          </article>
-        </div>
+            eficiência, preservar margem e construir operações sustentáveis"
+          ctaLabel="Solicitar Auditoria Estratégica"
+          ctaHref="#docs"
+          secondaryCtaLabel="Ver Metodologia"
+          secondaryCtaHref="https://github.com/rahil1202"
+          align="left"
+          overlayGradient="linear-gradient(180deg, #0000FB 0%, #0000FF55 40%, transparent)"
+        />
       </section>
 
       <section>
