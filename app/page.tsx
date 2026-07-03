@@ -3,11 +3,14 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div>
-      <header>
-        <p>Valadares</p>
+      <header className="fixed top-8 left-1/2 -translate-x-1/2 w-full max-w-7xl flex justify-between items-center bg-white px-8 py-4 rounded-2xl">
+        <div className="flex gap-4">
+          {/* <Image alt="Logo valadares" src={""} width={32} height={32}></Image> */}
+          <p className="text-xl font-medium text-blue-800">Valadares</p>
+        </div>
 
         <nav>
-          <ul>
+          <ul className="flex gap-6">
             <li>
               <a href="#hero">Início</a>
             </li>
@@ -26,7 +29,9 @@ export default function Home() {
           </ul>
         </nav>
 
-        <button>Solicitar Auditoria</button>
+        <button className="bg-blue-800 px-4 py-3 text-base rounded-xl text-white font-medium cursor-pointer">
+          Solicitar Auditoria
+        </button>
       </header>
 
       <section id="hero">
