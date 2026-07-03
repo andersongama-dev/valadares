@@ -147,6 +147,70 @@ export default function Home() {
           🚀 Crescimento sustentável
         </div>
       </section>
+
+      <section>
+        <div>
+          <p>Resultados</p>
+          <h2>Os números contam a história.</h2>
+        </div>
+
+        <div>
+          Coloque placeholders até receber dados reais. +XX% Aumento de margem
+          +XXX Operações atendidas +X Mi Em faturamento analisado XX% Redução de
+          desperdícios
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h2>Depoimentos</h2>
+        </div>
+
+        <div>
+          <article>
+            <h5>
+              Depois da consultoria conseguimos escalar mantendo nossa margem.
+            </h5>
+            <p>Pedro</p>
+            <p>Js Revisões</p>
+            <p>⭐⭐⭐⭐⭐</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h2>FAQ</h2>
+        </div>
+
+        <div>
+          A consultoria serve para qualquer empresa? Atendemos operações que
+          desejam crescer de forma estruturada. Vocês trabalham com quais
+          marketplaces? Mercado Livre, Shopee, Amazon e outras plataformas. A
+          auditoria possui custo? Será definido conforme a política da empresa.
+          O atendimento é online? Sim.
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h2>Sua operação está crescendo.</h2>
+          <p>Agora é hora de fazer seu lucro crescer junto.</p>
+
+          <p>
+            Solicite uma auditoria estratégica e descubra onde sua operação pode
+            ganhar eficiência.
+          </p>
+
+          <button>Solicitar Auditoria Estratégica</button>
+        </div>
+      </section>
+
+      <footer>
+        Logo Valadares Assessoria "Nascemos para trazer clareza para operações
+        de alta escala no marketplace." Links Instagram WhatsApp LinkedIn
+        Contato E-mail Telefone Direitos reservados.
+      </footer>
     </div>
   );
 }
