@@ -1,12 +1,36 @@
+"use client";
+
+import { motion, Variants } from "framer-motion";
 import SideRays from "./SideRays";
 
 export default function Hero() {
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
     <section
       id="hero"
-      className="relative h-dvh flex items-center justify-center overflow-hidden"
+      className="relative h-dvh flex items-center justify-center overflow-hidden bg-white"
     >
-      <div className="absolute inset-0 w-dvw">
+      <div className="absolute inset-0 w-dvw pointer-events-none">
         <SideRays
           speed={2.5}
           rayColor1="#EAB308"
@@ -22,37 +46,51 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">
-        <h1 className="text-6xl font-bold tracking-[0.01em] text-center">
-          Faturamento impressiona.
-          <span className="block text-blue-800/50">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center"
+      >
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-center text-gray-900 max-w-5xl leading-[1.1]"
+        >
+          Faturamento impressiona.{" "}
+          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
             Lucro sustenta o crescimento.
           </span>
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 max-w-4xl text-center text-xl leading-8 text-gray-500">
+        <motion.p
+          variants={itemVariants}
+          className="mt-6 max-w-3xl text-center text-base sm:text-lg md:text-xl leading-relaxed text-gray-500 font-normal"
+        >
           Empresas crescem quando vendem mais. Líderes de mercado crescem quando
           transformam dados em decisões. A Valadares Assessoria ajuda operações
           de marketplace a escalar com inteligência, preservando margem e
           aumentando a rentabilidade.
-        </p>
+        </motion.p>
 
-        <div className="mt-8 flex gap-6">
+        <motion.div
+          variants={itemVariants}
+          className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0"
+        >
           <a
             href="#"
-            className="rounded-xl bg-blue-800 px-5 py-3 font-medium text-white"
+            className="rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 px-6 py-4 font-semibold text-white shadow-xl shadow-blue-600/10 hover:shadow-blue-600/20 text-center transition-all duration-300 hover:scale-105 active:scale-95"
           >
             Solicitar Auditoria Estratégica
           </a>
 
           <a
-            href="#"
-            className="rounded-xl border border-blue-800 px-5 py-3 font-medium text-blue-800"
+            href="#methodology"
+            className="rounded-xl border border-gray-200 bg-white/50 backdrop-blur-xs px-6 py-4 font-semibold text-gray-700 text-center transition-all duration-300 hover:bg-gray-50 hover:border-gray-300 hover:scale-105 active:scale-95"
           >
             Ver Metodologia
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
