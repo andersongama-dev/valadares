@@ -13,37 +13,37 @@ import { motion, Variants } from "framer-motion";
 
 const differentiators = [
   {
-    icon: <Target size={28} />,
+    icon: <Target size={22} />,
     title: "Decisões baseadas em dados",
     description:
       "Utilizamos indicadores e métricas para orientar decisões mais assertivas.",
   },
   {
-    icon: <BarChart3 size={28} />,
+    icon: <BarChart3 size={22} />,
     title: "Inteligência estratégica",
     description:
       "Planejamento focado em resultados consistentes e crescimento sustentável.",
   },
   {
-    icon: <TrendingUp size={28} />,
+    icon: <TrendingUp size={22} />,
     title: "Foco em lucratividade",
     description:
       "Priorizamos estratégias que aumentam margem e rentabilidade do negócio.",
   },
   {
-    icon: <Zap size={28} />,
+    icon: <Zap size={22} />,
     title: "Execução personalizada",
     description:
       "Soluções adaptadas às necessidades e objetivos da sua empresa.",
   },
   {
-    icon: <Handshake size={28} />,
+    icon: <Handshake size={22} />,
     title: "Atendimento próximo",
     description:
       "Acompanhamento contínuo com suporte estratégico durante toda a jornada.",
   },
   {
-    icon: <Rocket size={28} />,
+    icon: <Rocket size={22} />,
     title: "Crescimento sustentável",
     description:
       "Escalamos a operação mantendo previsibilidade e controle financeiro.",
@@ -55,7 +55,7 @@ const containerVariants: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Efeito cascata um pouco mais rápido para 6 itens
+      staggerChildren: 0.15,
     },
   },
 };
@@ -65,13 +65,17 @@ const itemVariants: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 100 },
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 15,
+    },
   },
 };
 
 export default function Differentiators() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+    <section className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -79,9 +83,9 @@ export default function Differentiators() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl max-w-4xl mx-auto leading-[1.15]">
           Por que empresas escolhem{" "}
-          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block sm:inline">
+          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
             a Valadares?
           </span>
         </h2>
@@ -92,25 +96,26 @@ export default function Differentiators() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 items-stretch"
+        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch"
       >
         {differentiators.map((diff, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            className="w-full flex"
+            whileHover={{ y: -8 }}
+            className="w-full flex cursor-pointer group"
           >
-            <Card className="relative mx-auto w-full py-6 shadow-sm transition hover:shadow-lg hover:-translate-y-2 duration-300 h-full flex flex-col group">
+            <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
               <CardHeader className="flex-1">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-800 text-white shadow-md transition-transform duration-300 group-hover:scale-110">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-600/10 transition-transform duration-300 group-hover:scale-110">
                   {diff.icon}
                 </div>
 
-                <CardTitle className="text-xl font-bold text-gray-900 tracking-tight">
+                <CardTitle className="text-gray-900 font-bold text-xl">
                   {diff.title}
                 </CardTitle>
 
-                <CardDescription className="mt-2 text-base text-gray-500 leading-relaxed">
+                <CardDescription className="text-gray-500 mt-2 leading-relaxed">
                   {diff.description}
                 </CardDescription>
               </CardHeader>
