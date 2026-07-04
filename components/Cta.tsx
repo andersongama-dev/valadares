@@ -23,7 +23,10 @@ const itemVariants: Variants = {
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-blue-900 to-indigo-950 px-6 py-24 sm:py-32 mt-12">
+    <section
+      className="relative overflow-hidden bg-linear-to-br from-blue-900 to-indigo-950 px-6 py-24 sm:py-32 mt-12"
+      id="cta"
+    >
       <div className="absolute top-0 left-1/2 -z-10 h-150 w-250 -translate-x-1/2 mask-[radial-gradient(ellipse_at_top,white,transparent)] bg-blue-500/10" />
 
       <motion.div

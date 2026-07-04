@@ -45,7 +45,7 @@ export default function Header() {
             </li>
             <li className="w-full border-b border-blue-800/60 md:border-none pb-4 md:pb-0">
               <a
-                href=""
+                href="#solutions"
                 onClick={() => setIsOpen(false)}
                 className="block w-full hover:text-blue-300 transition-colors"
               >
@@ -54,7 +54,7 @@ export default function Header() {
             </li>
             <li className="w-full border-b border-blue-800/60 md:border-none pb-4 md:pb-0">
               <a
-                href=""
+                href="#methodology"
                 onClick={() => setIsOpen(false)}
                 className="block w-full hover:text-blue-300 transition-colors"
               >
@@ -63,7 +63,7 @@ export default function Header() {
             </li>
             <li className="w-full border-b border-blue-800/60 md:border-none pb-4 md:pb-0">
               <a
-                href=""
+                href="#depoimentos"
                 onClick={() => setIsOpen(false)}
                 className="block w-full hover:text-blue-300 transition-colors"
               >
@@ -72,7 +72,7 @@ export default function Header() {
             </li>
             <li className="w-full md:border-none pb-4 md:pb-0">
               <a
-                href=""
+                href="#cta"
                 onClick={() => setIsOpen(false)}
                 className="block w-full hover:text-blue-300 transition-colors"
               >

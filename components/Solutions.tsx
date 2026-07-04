@@ -25,7 +25,7 @@ const itemVariants: Variants = {
 
 export default function Solutions() {
   return (
-    <section className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32">
+    <section className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32" id="solutions">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
