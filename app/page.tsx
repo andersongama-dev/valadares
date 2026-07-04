@@ -1,5 +1,11 @@
-import Image from "next/image";
-import { AetherHero } from "@/components/ui/aether-hero";
+"use client";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import SideRays from "@/components/SideRays";
 
 export default function Home() {
   return (
@@ -11,10 +17,9 @@ export default function Home() {
           flex justify-between items-center
           px-8 py-4
           rounded-2xl
-          z-[999999999999999]
-          bg-gradient-to-b from-white/30 to-white/10
+          z-50
           backdrop-blur-2xl
-          border border-white/30
+          bg-blue-800
           shadow-2xl shadow-black/10
           "
       >
@@ -22,7 +27,6 @@ export default function Home() {
           {/* <Image alt="Logo valadares" src={""} width={32} height={32} /> */}
           <p className="text-xl font-medium text-white">Valadares</p>
         </div>
-
         <nav>
           <ul className="flex gap-6 text-white">
             <li>
@@ -52,33 +56,74 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-
         <button className="bg-white px-4 py-3 text-base rounded-xl text-blue-800 font-medium cursor-pointer hover:bg-blue-800 hover:text-white transition-colors">
           Solicitar Auditoria
         </button>
       </header>
 
-      <section id="#hero">
-        <AetherHero
-          title="Faturamento é ego. Lucro é realidade"
-          subtitle="Escalar uma operação vai muito além de vender mais, A Valadares
-            Assessoria transforma dados em decisões estratégicas para aumnetar a
-            eficiência, preservar margem e construir operações sustentáveis"
-          ctaLabel="Solicitar Auditoria Estratégica"
-          ctaHref="#docs"
-          secondaryCtaLabel="Ver Metodologia"
-          secondaryCtaHref="https://github.com/rahil1202"
-          align="left"
-          overlayGradient="linear-gradient(180deg, #0000FB 0%, #0000FF55 40%, transparent)"
-        />
+      <section
+        id="hero"
+        className="relative h-dvh flex items-center justify-center overflow-hidden"
+      >
+        <div className="absolute inset-0 w-dvw">
+          <SideRays
+            speed={2.5}
+            rayColor1="#EAB308"
+            rayColor2="#96c8ff"
+            intensity={2}
+            spread={2}
+            origin="top-right"
+            tilt={0}
+            saturation={1.5}
+            blend={0.75}
+            falloff={1.6}
+            opacity={1}
+          />
+        </div>
+
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center">
+          <h1 className="text-6xl font-bold tracking-[0.01em] text-center">
+            Faturamento impressiona.
+            <span className="block text-blue-800/50">
+              Lucro sustenta o crescimento.
+            </span>
+          </h1>
+
+          <p className="mt-6 max-w-4xl text-center text-xl leading-8 text-gray-500">
+            Empresas crescem quando vendem mais. Líderes de mercado crescem
+            quando transformam dados em decisões. A Valadares Assessoria ajuda
+            operações de marketplace a escalar com inteligência, preservando
+            margem e aumentando a rentabilidade.
+          </p>
+
+          <div className="mt-8 flex gap-6">
+            <a
+              href="#"
+              className="rounded-xl bg-blue-800 px-5 py-3 font-medium text-white"
+            >
+              Solicitar Auditoria Estratégica
+            </a>
+
+            <a
+              href="#"
+              className="rounded-xl border border-blue-800 px-5 py-3 font-medium text-blue-800"
+            >
+              Ver Metodologia
+            </a>
+          </div>
+        </div>
       </section>
 
-      <section>
+      <section className="mt-32">
         <div>
-          <p>O problema</p>
-          <h2>Muitas empresas faturam bilhões, Poucas realmente lucram</h2>
+          <h2 className="text-5xl text-blue-800 text-center font-bold tracking-[0.01em]">
+            Muitas empresas faturam bilhões,{" "}
+            <span className="block text-blue-800/50">
+              Poucas realmente lucram
+            </span>
+          </h2>
 
-          <p>
+          <p className="text-gray-500 max-w-5xl text-center mx-auto my-6 leading-6 tracking-[0.02em]">
             À medida que a operação cresce, aumentam também os custos, a
             complexidade e a dependência dos algoritmos dos marketplaces. O
             faturamento sobe, mas a lucratividade nem sempre acompanha esse
@@ -87,22 +132,70 @@ export default function Home() {
           </p>
         </div>
 
-        <div>
-          <article>
-            <h5>Alto faturamento</h5>
-          </article>
+        <div className="text-white grid grid-cols-4 mx-12 mt-16">
+          <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+            <img
+              src="https://avatar.vercel.sh/shadcn1"
+              alt="Event cover"
+              className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+            />
+            <CardHeader>
+              <CardTitle>Alto faturamento</CardTitle>
+              <CardDescription>
+                A practical talk on component APIs, accessibility, and shipping
+                faster.
+              </CardDescription>
+            </CardHeader>
+          </Card>
 
-          <article>
-            <h5>Margem reduzida</h5>
-          </article>
+          <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+            <img
+              src="https://avatar.vercel.sh/shadcn1"
+              alt="Event cover"
+              className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+            />
+            <CardHeader>
+              <CardTitle>Margem reduzida</CardTitle>
+              <CardDescription>
+                A practical talk on component APIs, accessibility, and shipping
+                faster.
+              </CardDescription>
+            </CardHeader>
+          </Card>
 
-          <article>
-            <h5>Crescimento sem controle</h5>
-          </article>
+          <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+            <img
+              src="https://avatar.vercel.sh/shadcn1"
+              alt="Event cover"
+              className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+            />
+            <CardHeader>
+              <CardTitle>Crescimento sem controle</CardTitle>
+              <CardDescription>
+                A practical talk on component APIs, accessibility, and shipping
+                faster.
+              </CardDescription>
+            </CardHeader>
+          </Card>
 
-          <article>
-            <h5>Operação otimizada</h5>
-          </article>
+          <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
+            <img
+              src="https://avatar.vercel.sh/shadcn1"
+              alt="Event cover"
+              className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+            />
+            <CardHeader>
+              <CardTitle>Operação otimizada</CardTitle>
+              <CardDescription>
+                A practical talk on component APIs, accessibility, and shipping
+                faster.
+              </CardDescription>
+            </CardHeader>
+          </Card>
         </div>
       </section>
 
