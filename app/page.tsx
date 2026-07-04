@@ -1,35 +1,4 @@
 "use client";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import SideRays from "@/components/SideRays";
-import {
-  BarChart3,
-  Briefcase,
-  Database,
-  Handshake,
-  InspectionPanelIcon,
-  LucideKanbanSquareDashed,
-  Mail,
-  MessageCircle,
-  Phone,
-  Quote,
-  Rocket,
-  ShoppingBag,
-  Star,
-  Target,
-  TrendingUp,
-  Zap,
-} from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PainPoints from "@/components/PainPoints";
