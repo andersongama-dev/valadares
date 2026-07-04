@@ -1,68 +1,105 @@
+"use client";
+
+import { motion, Variants } from "framer-motion";
+
+const steps = [
+  {
+    number: "01",
+    title: "Diagnóstico Estratégico",
+    description:
+      "Análise profunda e completa do momento atual da sua operação.",
+  },
+  {
+    number: "02",
+    title: "Mapeamento",
+    description: "Identificação cirúrgica dos principais gargalos e perdas.",
+  },
+  {
+    number: "03",
+    title: "Plano de Ação",
+    description: "Construção de uma estratégia sob medida para o seu negócio.",
+  },
+  {
+    number: "04",
+    title: "Acompanhamento",
+    description: "Monitoramento contínuo e evolução constante dos resultados.",
+  },
+];
+
 export default function Methodology() {
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
-    <section className="mt-32">
-      <div>
-        <h2 className="text-5xl text-center font-bold tracking-[0.01em]">
+    <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+        className="text-center"
+      >
+        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
           Uma metodologia baseada em dados,{" "}
-          <span className="block text-blue-800/50">não em achismos</span>
+          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block sm:inline">
+            não em achismos.
+          </span>
         </h2>
-      </div>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500">
+          Nosso método é focado em clareza, previsibilidade e crescimento
+          sustentável.
+        </p>
+      </motion.div>
 
-      <div className="flex items-center justify-between mx-32 mt-16">
-        <div className="flex flex-col items-center text-center max-w-52">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-800 text-2xl font-bold text-white shadow-lg">
-            01
-          </div>
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        className="mt-20 grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-6 relative"
+      >
+        {steps.map((step, index) => (
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            className="relative flex flex-col items-center text-center group"
+          >
+            {index !== steps.length - 1 && (
+              <div className="hidden md:block absolute top-10 left-[60%] right-[-40%] h-0.5 bg-linear-to-r from-blue-500/50 to-transparent z-0 transition-all duration-300 group-hover:from-blue-600" />
+            )}
 
-          <h3 className="mt-6 text-xl font-semibold">
-            Diagnóstico Estratégico
-          </h3>
+            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-blue-600 to-indigo-700 text-2xl font-bold text-white shadow-xl transition-transform duration-300 group-hover:scale-110">
+              {step.number}
+            </div>
 
-          <p className="mt-2 text-gray-500">Análise completa da operação.</p>
-        </div>
+            <h3 className="mt-6 text-xl font-medium text-gray-900 tracking-tight">
+              {step.title}
+            </h3>
 
-        <div className="h-1 flex-1 mx-6 rounded-full bg-blue-800"></div>
-
-        <div className="flex flex-col items-center text-center max-w-52">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-800 text-2xl font-bold text-white shadow-lg">
-            02
-          </div>
-
-          <h3 className="mt-6 text-xl font-semibold">
-            Mapeamento de Oportunidades
-          </h3>
-
-          <p className="mt-2 text-gray-500">
-            Identificação dos principais gargalos.
-          </p>
-        </div>
-
-        <div className="h-1 flex-1 mx-6 rounded-full bg-blue-800"></div>
-
-        <div className="flex flex-col items-center text-center max-w-52">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-800 text-2xl font-bold text-white shadow-lg">
-            03
-          </div>
-
-          <h3 className="mt-6 text-xl font-semibold">Plano de Ação</h3>
-
-          <p className="mt-2 text-gray-500">Estratégia personalizada.</p>
-        </div>
-
-        <div className="h-1 flex-1 mx-6 rounded-full bg-blue-800"></div>
-
-        <div className="flex flex-col items-center text-center max-w-52">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-800 text-2xl font-bold text-white shadow-lg">
-            04
-          </div>
-
-          <h3 className="mt-6 text-xl font-semibold">Acompanhamento</h3>
-
-          <p className="mt-2 text-gray-500">
-            Monitoramento contínuo dos resultados.
-          </p>
-        </div>
-      </div>
+            <p className="mt-3 text-base text-gray-500 max-w-xs leading-relaxed">
+              {step.description}
+            </p>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }
