@@ -9,7 +9,7 @@ const containerVariants: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 };
@@ -19,25 +19,28 @@ const itemVariants: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 100 },
+    transition: { type: "spring", stiffness: 80, damping: 15 },
   },
 };
 
 export default function Solutions() {
   return (
-    <section className="mt-32">
+    <section className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32" id="solutions">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6 }}
+        className="text-center"
       >
-        <h2 className="text-5xl text-center font-bold tracking-[0.01em]">
+        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl max-w-4xl mx-auto leading-[1.15]">
           Transformamos dados em{" "}
-          <span className="block text-blue-800/50">vantagem competitiva</span>
+          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
+            vantagem competitiva.
+          </span>
         </h2>
 
-        <p className="text-gray-500 max-w-5xl text-center mx-auto my-6 leading-6 tracking-[0.02em]">
+        <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
           Nossa atuação combina inteligência de mercado, análise operacional e
           otimização estratégica para tornar sua operação mais eficiente,
           previsível e lucrativa.
@@ -49,16 +52,22 @@ export default function Solutions() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}
-        className="text-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-6 md:mx-12 mt-16 items-stretch"
+        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
       >
-        <motion.div variants={itemVariants} className="w-full flex">
-          <Card className="relative mx-auto w-full max-w-sm py-4 shadow-sm transition hover:shadow-lg hover:-translate-y-2 duration-300 h-full flex flex-col group">
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ y: -8 }}
+          className="w-full flex cursor-pointer group"
+        >
+          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
             <CardHeader className="flex-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-blue-800 text-white transition-transform duration-300 group-hover:scale-110">
-                <Database size={24} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-600/10 transition-transform duration-300 group-hover:scale-110">
+                <Database size={22} />
               </div>
-              <CardTitle>Inteligência de Dados</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-gray-900 font-bold text-xl">
+                Inteligência de Dados
+              </CardTitle>
+              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
                 Analisamos indicadores para identificar gargalos e oportunidades
                 de crescimento.
               </CardDescription>
@@ -66,14 +75,20 @@ export default function Solutions() {
           </Card>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="w-full flex">
-          <Card className="relative mx-auto w-full max-w-sm py-4 shadow-sm transition hover:shadow-lg hover:-translate-y-2 duration-300 h-full flex flex-col group">
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ y: -8 }}
+          className="w-full flex cursor-pointer group"
+        >
+          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
             <CardHeader className="flex-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-blue-800 text-white transition-transform duration-300 group-hover:scale-110">
-                <Briefcase size={24} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-600/10 transition-transform duration-300 group-hover:scale-110">
+                <Briefcase size={22} />
               </div>
-              <CardTitle>Estratégia Comercial</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-gray-900 font-bold text-xl">
+                Estratégia Comercial
+              </CardTitle>
+              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
                 Estruturamos processos para aumentar rentabilidade sem depender
                 apenas de volume.
               </CardDescription>
@@ -81,28 +96,40 @@ export default function Solutions() {
           </Card>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="w-full flex">
-          <Card className="relative mx-auto w-full max-w-sm py-4 shadow-sm transition hover:shadow-lg hover:-translate-y-2 duration-300 h-full flex flex-col group">
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ y: -8 }}
+          className="w-full flex cursor-pointer group"
+        >
+          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
             <CardHeader className="flex-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-blue-800 text-white transition-transform duration-300 group-hover:scale-110">
-                <ShoppingBag size={24} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-600/10 transition-transform duration-300 group-hover:scale-110">
+                <ShoppingBag size={22} />
               </div>
-              <CardTitle>Otimização de Marketplace</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-gray-900 font-bold text-xl">
+                Otimização de Marketplace
+              </CardTitle>
+              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
                 Melhoramos posicionamento, anúncios e eficiência operacional.
               </CardDescription>
             </CardHeader>
           </Card>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="w-full flex">
-          <Card className="relative mx-auto w-full max-w-sm py-4 shadow-sm transition hover:shadow-lg hover:-translate-y-2 duration-300 h-full flex flex-col group">
+        <motion.div
+          variants={itemVariants}
+          whileHover={{ y: -8 }}
+          className="w-full flex cursor-pointer group"
+        >
+          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
             <CardHeader className="flex-1">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-blue-800 text-white transition-transform duration-300 group-hover:scale-110">
-                <TrendingUp size={24} />
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 text-white shadow-md shadow-blue-600/10 transition-transform duration-300 group-hover:scale-110">
+                <TrendingUp size={22} />
               </div>
-              <CardTitle>Crescimento Sustentável</CardTitle>
-              <CardDescription>
+              <CardTitle className="text-gray-900 font-bold text-xl">
+                Crescimento Sustentável
+              </CardTitle>
+              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
                 Escalamos sua operação mantendo controle financeiro e
                 previsibilidade.
               </CardDescription>

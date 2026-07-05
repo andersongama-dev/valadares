@@ -31,7 +31,7 @@ export default function Methodology() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   };
@@ -42,14 +42,15 @@ export default function Methodology() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
-        ease: "easeOut",
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
       },
     },
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+    <section id="methodology" className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -57,13 +58,13 @@ export default function Methodology() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl max-w-4xl mx-auto leading-[1.15]">
           Uma metodologia baseada em dados,{" "}
-          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block sm:inline">
+          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
             não em achismos.
           </span>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500">
+        <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
           Nosso método é focado em clareza, previsibilidade e crescimento
           sustentável.
         </p>
@@ -74,27 +75,24 @@ export default function Methodology() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
-        className="mt-20 grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-6 relative"
+        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch relative"
       >
         {steps.map((step, index) => (
           <motion.div
             key={index}
             variants={itemVariants}
-            className="relative flex flex-col items-center text-center group"
+            whileHover={{ y: -8 }}
+            className="relative flex flex-col items-center text-center group bg-white border border-gray-100 p-6 rounded-2xl shadow-sm transition-shadow duration-300 hover:shadow-xl cursor-pointer"
           >
-            {index !== steps.length - 1 && (
-              <div className="hidden md:block absolute top-10 left-[60%] right-[-40%] h-0.5 bg-linear-to-r from-blue-500/50 to-transparent z-0 transition-all duration-300 group-hover:from-blue-600" />
-            )}
-
-            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-linear-to-br from-blue-600 to-indigo-700 text-2xl font-bold text-white shadow-xl transition-transform duration-300 group-hover:scale-110">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 text-xl font-bold text-white shadow-md shadow-blue-600/10 transition-transform duration-300 group-hover:scale-110">
               {step.number}
             </div>
 
-            <h3 className="mt-6 text-xl font-medium text-gray-900 tracking-tight">
+            <h3 className="mt-5 text-xl font-bold text-gray-900 tracking-tight">
               {step.title}
             </h3>
 
-            <p className="mt-3 text-base text-gray-500 max-w-xs leading-relaxed">
+            <p className="mt-2 text-base text-gray-500 leading-relaxed">
               {step.description}
             </p>
           </motion.div>

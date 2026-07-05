@@ -37,7 +37,7 @@ const faqItems = [
 
 export default function FAQ() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-12 sm:py-12">
+    <section className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -45,13 +45,13 @@ export default function FAQ() {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl max-w-4xl mx-auto leading-[1.15]">
           Perguntas{" "}
-          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block sm:inline">
-            Frequentes.
+          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
+            frequentes.
           </span>
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500">
+        <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
           Tire suas dúvidas sobre como funciona a nossa consultoria e processo
           estratégico.
         </p>
@@ -61,17 +61,17 @@ export default function FAQ() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ type: "spring", stiffness: 100, delay: 0.1 }}
-        className="mx-auto mt-16 max-w-4xl"
+        transition={{ type: "spring", stiffness: 80, damping: 15 }}
+        className="mx-auto mt-16 max-w-3xl"
       >
         <Accordion className="w-full space-y-4">
           {faqItems.map((item) => (
             <AccordionItem
               key={item.id}
               value={item.id}
-              className="border border-gray-200 rounded-2xl px-6 shadow-xs transition-colors duration-200 data-[state=open]:bg-gray-50/50"
+              className="border border-gray-100 rounded-2xl px-6 shadow-sm transition-all duration-300 bg-white data-[state=open]:shadow-md data-[state=open]:border-gray-200/60"
             >
-              <AccordionTrigger className="text-left font-semibold text-lg text-gray-900 hover:text-blue-600 transition-colors py-5">
+              <AccordionTrigger className="text-left font-bold text-lg text-gray-900 hover:text-blue-600 transition-colors py-5 hover:no-underline">
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className="text-base text-gray-500 pb-5 leading-relaxed">
