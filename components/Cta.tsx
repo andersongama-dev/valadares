@@ -47,17 +47,15 @@ export default function CTA() {
           variants={itemVariants}
           className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight text-white sm:text-5xl leading-tight"
         >
-          Sua operação está crescendo.
-          <br />
-          Agora é hora de fazer seu lucro crescer junto.
+          Sua operação já cresceu. Agora faça seu lucro crescer junto.
         </motion.h2>
 
         <motion.p
           variants={itemVariants}
           className="mt-6 max-w-2xl text-lg leading-relaxed text-blue-100/80"
         >
-          Solicite uma auditoria estratégica e descubra onde sua operação pode
-          ganhar eficiência, reduzir desperdícios e aumentar a lucratividade.
+          Solicite uma auditoria estratégica e descubra novas oportunidades de
+          crescimento.
         </motion.p>
 
         <motion.div

@@ -40,11 +40,9 @@ export default function PainPoints() {
         </h2>
 
         <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
-          À medida que a operação cresce, aumentam também os custos, a
-          complexidade e a dependência dos algoritmos dos marketplaces. O
-          faturamento sobe, mas a lucratividade nem sempre acompanha esse
-          crescimento. Sem uma estratégia orientada por dados, cada decisão
-          representa um risco para a margem da operação.
+          Crescer sem estratégia aumenta custos, reduz margens e torna sua
+          operação dependente dos algoritmos. Nossa missão é transformar dados
+          em decisões que impulsionam resultados.
         </p>
       </motion.div>
 
@@ -66,9 +64,7 @@ export default function PainPoints() {
                 Alto faturamento
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Vender mais nem sempre significa gerar mais resultado. Muitas
-                operações alcançam grandes números de vendas, mas continuam com
-                baixa rentabilidade.
+                Vender mais não significa lucrar mais.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -85,9 +81,7 @@ export default function PainPoints() {
                 Margem reduzida
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Custos operacionais, campanhas pouco eficientes e decisões sem
-                base em dados corroem a margem e comprometem o lucro da
-                operação.
+                Custos e decisões imprecisas comprometem a rentabilidade.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -104,9 +98,7 @@ export default function PainPoints() {
                 Crescimento sem controle
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                O aumento da demanda traz mais complexidade. Sem processos e
-                indicadores bem definidos, escalar passa a representar mais
-                risco do que oportunidade.
+                Escalar sem estratégia aumenta riscos.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -123,9 +115,7 @@ export default function PainPoints() {
                 Operação otimizada
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Com inteligência de dados, estratégia e processos estruturados,
-                sua operação cresce de forma previsível, preservando margem e
-                aumentando a lucratividade.
+                Dados e processos transformam crescimento em lucro.
               </CardDescription>
             </CardHeader>
           </Card>

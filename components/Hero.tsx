@@ -66,10 +66,8 @@ export default function Hero() {
           variants={itemVariants}
           className="mt-6 max-w-3xl text-center text-base sm:text-lg md:text-xl leading-relaxed text-gray-500 font-normal"
         >
-          Empresas crescem quando vendem mais. Líderes de mercado crescem quando
-          transformam dados em decisões. A Valadares Assessoria ajuda operações
-          de marketplace a escalar com inteligência, preservando margem e
-          aumentando a rentabilidade.
+          Ajudamos operações de marketplace a crescer com mais previsibilidade,
+          protegendo a margem e transformando dados em decisões estratégicas.
         </motion.p>
 
         <motion.div
