@@ -15,38 +15,32 @@ const differentiators = [
   {
     icon: <Target size={22} />,
     title: "Decisões baseadas em dados",
-    description:
-      "Utilizamos indicadores e métricas para orientar decisões mais assertivas.",
+    description: "Indicadores para decisões mais precisas.",
   },
   {
     icon: <BarChart3 size={22} />,
     title: "Inteligência estratégica",
-    description:
-      "Planejamento focado em resultados consistentes e crescimento sustentável.",
+    description: "Crescimento orientado por estratégia.",
   },
   {
     icon: <TrendingUp size={22} />,
     title: "Foco em lucratividade",
-    description:
-      "Priorizamos estratégias que aumentam margem e rentabilidade do negócio.",
+    description: "Mais margem, menos desperdício.",
   },
   {
     icon: <Zap size={22} />,
     title: "Execução personalizada",
-    description:
-      "Soluções adaptadas às necessidades e objetivos da sua empresa.",
+    description: "Soluções para a realidade do seu negócio.",
   },
   {
     icon: <Handshake size={22} />,
     title: "Atendimento próximo",
-    description:
-      "Acompanhamento contínuo com suporte estratégico durante toda a jornada.",
+    description: "Acompanhamento durante toda a operação.",
   },
   {
     icon: <Rocket size={22} />,
     title: "Crescimento sustentável",
-    description:
-      "Escalamos a operação mantendo previsibilidade e controle financeiro.",
+    description: "Escala com previsibilidade.",
   },
 ];
 

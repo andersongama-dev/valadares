@@ -41,9 +41,8 @@ export default function Solutions() {
         </h2>
 
         <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
-          Nossa atuação combina inteligência de mercado, análise operacional e
-          otimização estratégica para tornar sua operação mais eficiente,
-          previsível e lucrativa.
+          Combinamos inteligência de dados e estratégia para tornar sua operação
+          mais eficiente, previsível e lucrativa.
         </p>
       </motion.div>
 
@@ -68,8 +67,7 @@ export default function Solutions() {
                 Inteligência de Dados
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Analisamos indicadores para identificar gargalos e oportunidades
-                de crescimento.
+                Indicadores que orientam decisões estratégicas.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -89,8 +87,7 @@ export default function Solutions() {
                 Estratégia Comercial
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Estruturamos processos para aumentar rentabilidade sem depender
-                apenas de volume.
+                Mais rentabilidade, menos desperdício.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -110,7 +107,7 @@ export default function Solutions() {
                 Otimização de Marketplace
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Melhoramos posicionamento, anúncios e eficiência operacional.
+                Melhor desempenho e eficiência operacional.
               </CardDescription>
             </CardHeader>
           </Card>
@@ -130,8 +127,7 @@ export default function Solutions() {
                 Crescimento Sustentável
               </CardTitle>
               <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Escalamos sua operação mantendo controle financeiro e
-                previsibilidade.
+                Escalabilidade com controle e previsibilidade.
               </CardDescription>
             </CardHeader>
           </Card>

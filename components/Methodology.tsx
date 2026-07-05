@@ -64,10 +64,6 @@ export default function Methodology() {
             não em achismos.
           </span>
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
-          Nosso método é focado em clareza, previsibilidade e crescimento
-          sustentável.
-        </p>
       </motion.div>
 
       <motion.div
