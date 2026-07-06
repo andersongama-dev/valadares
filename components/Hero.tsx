@@ -52,7 +52,7 @@ export default function Hero() {
         >
           <motion.h1
             variants={itemVariants}
-            className="font-serif text-white text-[88px] text-center text-gray-900"
+            className="font-serif text-white text-[88px] text-center"
           >
             Estratégia <span className="font-geist-sans">para quem quer</span>{" "}
             dominar o marketplace.
@@ -77,7 +77,7 @@ export default function Hero() {
             Especialistas em operações de marketplace
           </motion.p>
 
-          <motion.div className="flex gap-16 items-end h-32">
+          <motion.div className="flex gap-16 items-end h-32" variants={itemVariants}>
             <Image
               alt=""
               src={"amazonlogo.svg"}
