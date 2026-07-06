@@ -2,6 +2,9 @@
 
 import { motion, Variants } from "framer-motion";
 import SideRays from "./SideRays";
+import Image from "next/image";
+import { div } from "framer-motion/client";
+import TextReveal from "./TextReveal";
 
 export default function Hero() {
   const containerVariants: Variants = {
@@ -26,69 +29,82 @@ export default function Hero() {
   };
 
   return (
-    <section
-      id="hero"
-      className="relative h-dvh flex items-center justify-center overflow-hidden bg-white"
-    >
-      <div className="absolute inset-0 w-dvw pointer-events-none">
-        <SideRays
-          speed={2.5}
-          rayColor1="#EAB308"
-          rayColor2="#96c8ff"
-          intensity={2}
-          spread={2}
-          origin="top-right"
-          tilt={0}
-          saturation={1.5}
-          blend={0.75}
-          falloff={1.6}
-          opacity={1}
-        />
-      </div>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center"
+    <div className="bg-black">
+      <section
+        id="hero"
+        className="relative min-h-dvh flex items-center justify-center overflow-hidden"
       >
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-center text-gray-900 max-w-5xl leading-[1.1]"
-        >
-          Faturamento impressiona.{" "}
-          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
-            Lucro sustenta o crescimento.
-          </span>
-        </motion.h1>
-
-        <motion.p
-          variants={itemVariants}
-          className="mt-6 max-w-3xl text-center text-base sm:text-lg md:text-xl leading-relaxed text-gray-500 font-normal"
-        >
-          Ajudamos operações de marketplace a crescer com mais previsibilidade,
-          protegendo a margem e transformando dados em decisões estratégicas.
-        </motion.p>
+        <div className="absolute inset-0 w-dvw pointer-events-none px-8">
+          <Image
+            src={"bg-gradient.svg"}
+            alt=""
+            width={10}
+            height={1920}
+            className="w-full h-dvh"
+          ></Image>
+        </div>
 
         <motion.div
-          variants={itemVariants}
-          className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 flex flex-col items-center"
         >
-          <a
-            href="#"
-            className="rounded-xl bg-linear-to-br from-blue-600 to-indigo-700 px-6 py-4 font-semibold text-white shadow-xl shadow-blue-600/10 hover:shadow-blue-600/20 text-center transition-all duration-300 hover:scale-105 active:scale-95"
+          <motion.h1
+            variants={itemVariants}
+            className="font-serif text-white text-[88px] text-center"
           >
-            Solicitar Auditoria Estratégica
-          </a>
+            Estratégia <span className="font-geist-sans">para quem quer</span>{" "}
+            dominar o marketplace.
+          </motion.h1>
 
-          <a
-            href="#methodology"
-            className="rounded-xl border border-gray-200 bg-white/50 backdrop-blur-xs px-6 py-4 font-semibold text-gray-700 text-center transition-all duration-300 hover:bg-gray-50 hover:border-gray-300 hover:scale-105 active:scale-95"
+          <motion.div
+            variants={itemVariants}
+            className="mt-16 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0"
           >
-            Ver Metodologia
-          </a>
+            <a
+              href="#methodology"
+              className="rounded-xl border border-gray-200 bg-white/50 backdrop-blur-xs px-6 py-4 font-semibold text-white text-center transition-all duration-300 hover:bg-gray-50 hover:border-gray-300 hover:scale-105 active:scale-95"
+            >
+              Ver Metodologia
+            </a>
+          </motion.div>
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-16 max-w-3xl text-center text-base sm:text-lg md:text-xl leading-relaxed text-gray-500 font-normal"
+          >
+            Especialistas em operações de marketplace
+          </motion.p>
+
+          <motion.div className="flex gap-16 items-end h-32" variants={itemVariants}>
+            <Image
+              alt=""
+              src={"amazonlogo.svg"}
+              width={50}
+              height={48}
+              className=""
+            ></Image>
+            <Image
+              alt=""
+              src={"mercadolivre.svg"}
+              width={100}
+              height={100}
+              className=""
+            ></Image>
+            <Image
+              alt=""
+              src={"shopeelogo.svg"}
+              width={100}
+              height={100}
+              className=""
+            ></Image>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </section>
+      </section>
+      <section className="mt-55 flex justify-center">
+        <TextReveal></TextReveal>
+      </section>
+    </div>
   );
 }
