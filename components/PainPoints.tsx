@@ -1,126 +1,94 @@
 "use client";
 
-import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { motion, Variants } from "framer-motion";
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
+const innerBgVariants: Variants = {
+  default: {
+    background: "rgba(0, 0, 0, 1)",
+    transition: { duration: 0.3 },
+  },
+  hover: {
+    background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)",
+    transition: { duration: 0.4, ease: "easeInOut" },
   },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
+const borderGradientVariants: Variants = {
+  default: {
+    background:
+      "linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 1) 50%, rgba(255, 255, 255, 0.5) 100%)",
+  },
+  hover: {
+    background:
+      "linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(30, 58, 138, 1) 50%, rgba(255, 255, 255, 0.8) 100%)",
+    transition: { duration: 0.4, ease: "easeInOut" },
+  },
+};
+
+const descriptionVariants: Variants = {
+  default: {
+    opacity: 0,
+    height: 0,
+    marginTop: 0,
+    transition: { duration: 0.2, ease: "easeInOut" },
+  },
+  hover: {
     opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 80, damping: 15 },
+    height: "auto",
+    marginTop: 16,
+    transition: { duration: 0.3, ease: "easeInOut" },
   },
 };
 
 export default function PainPoints() {
+  const cards = [
+    {
+      title: "Inteligência Estratégica",
+      description:
+        "Aqui vai uma descrição detalhada sobre a Inteligência Estratégica e como ela impacta o negócio.",
+    },
+    {
+      title: "Crescimento Sustentável",
+      description:
+        "Aqui vai uma descrição detalhada sobre as práticas de Crescimento Sustentável a longo prazo.",
+    },
+    {
+      title: "Resultados Reais",
+      description:
+        "Aqui vai uma descrição detalhada focada nas métricas e Resultados Reais alcançados.",
+    },
+  ];
+
   return (
-    <section className="mx-auto max-w-7xl px-6 mt-24 sm:mt-32">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ duration: 0.6 }}
-        className="text-center"
-      >
-        <h2 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl max-w-4xl mx-auto leading-[1.15]">
-          Muitas empresas faturam milhões,{" "}
-          <span className="bg-linear-to-r api-gradient from-blue-600 to-indigo-600 bg-clip-text text-transparent block mt-1 sm:mt-2">
-            poucas realmente lucram.
-          </span>
-        </h2>
-
-        <p className="mx-auto mt-4 max-w-3xl text-base sm:text-lg text-gray-500 leading-relaxed">
-          Crescer sem estratégia aumenta custos, reduz margens e torna sua
-          operação dependente dos algoritmos. Nossa missão é transformar dados
-          em decisões que impulsionam resultados.
-        </p>
-      </motion.div>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
-        className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
-      >
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ y: -8 }}
-          className="w-full flex cursor-pointer"
+    <section className="px-8 pt-32 w-dvw bg-black flex flex-col gap-4 pb-2">
+      {cards.map((card, index) => (
+        <motion.article
+          key={index}
+          className="relative py-8 px-6 text-center cursor-pointer overflow-hidden rounded-[32px]"
+          initial="default"
+          whileHover="hover"
         >
-          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
-            <CardHeader className="flex-1">
-              <CardTitle className="text-gray-900 font-bold text-xl">
-                Alto faturamento
-              </CardTitle>
-              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Vender mais não significa lucrar mais.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </motion.div>
+          <motion.div
+            className="absolute inset-0 z-0 rounded-[32px]"
+            variants={borderGradientVariants}
+          />
 
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ y: -8 }}
-          className="w-full flex cursor-pointer"
-        >
-          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
-            <CardHeader className="flex-1">
-              <CardTitle className="text-gray-900 font-bold text-xl">
-                Margem reduzida
-              </CardTitle>
-              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Custos e decisões imprecisas comprometem a rentabilidade.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </motion.div>
+          <motion.div
+            className="absolute inset-[2px] z-10 rounded-[30px]"
+            variants={innerBgVariants}
+          />
 
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ y: -8 }}
-          className="w-full flex cursor-pointer"
-        >
-          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
-            <CardHeader className="flex-1">
-              <CardTitle className="text-gray-900 font-bold text-xl">
-                Crescimento sem controle
-              </CardTitle>
-              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Escalar sem estratégia aumenta riscos.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          whileHover={{ y: -8 }}
-          className="w-full flex cursor-pointer"
-        >
-          <Card className="relative w-full py-4 shadow-sm border border-gray-100 transition-shadow duration-300 hover:shadow-xl h-full flex flex-col bg-white rounded-2xl">
-            <CardHeader className="flex-1">
-              <CardTitle className="text-gray-900 font-bold text-xl">
-                Operação otimizada
-              </CardTitle>
-              <CardDescription className="text-gray-500 mt-2 leading-relaxed">
-                Dados e processos transformam crescimento em lucro.
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </motion.div>
-      </motion.div>
+          <div className="relative z-20 pointer-events-none">
+            <h3 className="text-[62px] font-serif text-white">{card.title}</h3>
+            <motion.p
+              className="text-white/80 text-lg max-w-xl mx-auto"
+              variants={descriptionVariants}
+            >
+              {card.description}
+            </motion.p>
+          </div>
+        </motion.article>
+      ))}
     </section>
   );
 }
